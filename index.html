@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Fanzine - Crimes Cibernéticos</title>
+  <title>Fanzine HQ - Crimes Cibernéticos</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
 
     @page {
-      size: A4 portrait;
+      size: A4 landscape;
       margin: 0;
     }
 
@@ -18,8 +18,8 @@
     }
 
     body {
-      background-color: #e0e0e0;
-      font-family: 'Space Grotesk', sans-serif;
+      background-color: #222;
+      font-family: 'Comic Neue', cursive, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,114 +27,129 @@
       padding: 20px;
     }
 
-    /* FOLHA A4 INTEIRA (210mm x 297mm) */
+    /* FOLHA A4 HORIZONTAL / LANDSCAPE (297mm x 210mm) */
     .a4-sheet {
-      width: 210mm;
-      height: 297mm;
-      background-color: #fff;
+      width: 297mm;
+      height: 210mm;
+      background-color: #111;
       display: grid;
-      grid-template-columns: 105mm 105mm;
-      grid-template-rows: repeat(4, 74.25mm);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      grid-template-columns: repeat(4, 74.25mm);
+      grid-template-rows: repeat(2, 105mm);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
     }
 
-    /* ESTILO INDIVIDUAL DE CADA PÁGINA (105mm x 74.25mm) */
+    /* ESTILO INDIVIDUAL DE CADA PÁGINA (74.25mm x 105mm) */
     .page {
-      width: 105mm;
-      height: 74.25mm;
-      padding: 6mm;
-      border: 1px dashed #bbb; /* Representa as linhas de dobra */
+      width: 74.25mm;
+      height: 105mm;
+      padding: 4mm;
+      border: 2px dashed #000; /* Linhas de dobra */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      background: #fafafa;
-      color: #111;
-      font-size: 8pt;
-      line-height: 1.15;
-    }
-
-    /* TIPOGRAFIA & ELEMENTOS ZINE */
-    h1, h2, h3 {
-      text-transform: uppercase;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .tag {
-      background: #000;
-      color: #fff;
-      font-size: 6pt;
-      font-weight: bold;
-      padding: 2px 4px;
-      display: inline-block;
-      text-transform: uppercase;
-    }
-
-    .box {
-      border: 1.5pt solid #000;
-      padding: 4px;
       background: #fff;
+      color: #000;
+      font-size: 7.5pt;
+      line-height: 1.1;
+      overflow: hidden;
+    }
+
+    /* ESTILO QUADRINHOS & POP-ART */
+    h1, h2, h3 {
+      font-family: 'Bangers', cursive;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 0.95;
+      text-shadow: 1.5px 1.5px 0px #000;
+    }
+
+    .comic-box {
+      border: 2.5px solid #000;
+      background: #fff;
+      box-shadow: 3px 3px 0px #000;
+      padding: 3px 5px;
+      margin: 2px 0;
+      position: relative;
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: #ffffff;
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 4px;
+      font-weight: bold;
+      font-size: 6.5pt;
       box-shadow: 2px 2px 0px #000;
     }
 
-    .stat-number {
-      font-size: 18pt;
-      font-weight: 900;
-      text-align: center;
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 12px;
+      border-width: 6px 6px 0;
+      border-style: solid;
+      border-color: #fff transparent;
       display: block;
-      line-height: 1;
+      width: 0;
     }
 
-    .highlight-quote {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 8.5pt;
+    .onomatopoeia {
+      font-family: 'Bangers', cursive;
+      font-size: 11pt;
+      color: #ff0055;
+      text-shadow: 1px 1px 0 #000;
+      display: inline-block;
+      transform: rotate(-5deg);
+    }
+
+    .tag-hq {
+      background: #ffcc00;
+      color: #000;
+      font-family: 'Bangers', cursive;
+      font-size: 8pt;
+      padding: 1px 4px;
+      border: 1.5px solid #000;
+      display: inline-block;
+      box-shadow: 1.5px 1.5px 0px #000;
+    }
+
+    .badge-stat {
+      font-family: 'Bangers', cursive;
+      font-size: 16pt;
+      color: #e60000;
       text-align: center;
-      background: #ffe600;
-      padding: 3px;
-      border: 1px solid #000;
+      line-height: 1;
+      text-shadow: 1px 1px 0px #000;
     }
 
-    .list-mini {
-      list-style: none;
-    }
-
-    .list-mini li {
-      margin-bottom: 2px;
-      font-size: 7.5pt;
-    }
-
-    .footer-note {
-      font-size: 5.5pt;
-      color: #444;
-      border-top: 1px solid #ccc;
+    .footer-hq {
+      font-size: 5pt;
+      font-weight: bold;
+      border-top: 1.5px solid #000;
       padding-top: 2px;
+      text-transform: uppercase;
     }
 
-    /* ESPECÍFICO CAPA */
-    .page-1 {
-      background: #fff000;
-    }
-    .page-1 h1 {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 26pt;
-      letter-spacing: -1px;
-    }
+    /* CORES TEMÁTICAS POR PÁGINA */
+    .p-1 { background: #ffe600; }
+    .p-2 { background: #00e5ff; }
+    .p-3 { background: #ff7700; }
+    .p-4 { background: #ff3366; }
+    .p-5 { background: #76ff03; }
+    .p-6 { background: #b388ff; }
+    .p-7 { background: #1de9b6; }
+    .p-8 { background: #ff5252; }
 
-    /* OPORTUNIDADES PARA ESTILO IMPRESSÃO */
+    /* MODO IMPRESSÃO */
     @media print {
-      body {
-        background: none;
-        padding: 0;
-      }
-      .a4-sheet {
-        box-shadow: none;
-      }
-      .page {
-        border: 0.5pt dashed #ccc; /* Linhas discretas para guiar dobras */
-      }
+      body { background: none; padding: 0; }
+      .a4-sheet { box-shadow: none; }
+      .page { border: 1px dashed #666; }
     }
   </style>
 </head>
@@ -142,135 +157,148 @@
 
   <div class="a4-sheet">
 
+    <!-- LINHA SUPERIOR: PÁGINAS 1 A 4 -->
+
     <!-- PÁGINA 1: CAPA -->
-    <div class="page page-1">
+    <div class="page p-1">
       <div>
-        <span class="tag">Fanzine Acadêmico • SI</span>
-        <h1 style="margin-top: 3px;">GOLPE!</h1>
-        <h3 style="font-size: 8pt; margin-bottom: 4px;">A INTERNET TAMBÉM ENGANA</h3>
+        <span class="tag-hq">HQ ACADÊMICA • VOL. 1</span>
+        <h1 style="font-size: 24pt; color: #ff0055; margin-top: 3px;">GOLPE!</h1>
+        <h2 style="font-size: 10pt; color: #000;">A INTERNET TAMBÉM ENGANA!</h2>
       </div>
-      <p style="font-size: 7.5pt;">Como funcionam os crimes digitais e por que qualquer pessoa pode ser vítima.</p>
-      <div class="box" style="text-align: center; font-size: 7pt; font-weight: bold;">
-        [ 📱🎭 🎣 🛒 ]<br>
-        NÃO É INGENUIDADE.<br>É ENGENHARIA.
+      <div class="comic-box" style="background: #fff; text-align: center;">
+        <span class="onomatopoeia" style="font-size: 14pt;">CLIQUE! 🎣</span>
+        <p style="font-size: 6.5pt; font-weight: bold; margin-top: 2px;">
+          Como funcionam os crimes digitais — e por que QUALQUER UM pode cair!
+        </p>
       </div>
-      <div class="footer-note">Sistemas de Informação • 1º Período</div>
+      <div class="speech-bubble">
+        "Não é ingenuidade... é Engenharia Social pura!" 🧠⚡
+      </div>
+      <div class="footer-hq">Sistemas de Informação • 1º Período</div>
     </div>
 
     <!-- PÁGINA 2: O TAMANHO DO PROBLEMA -->
-    <div class="page">
+    <div class="page p-2">
       <div>
-        <h2>O TAMANHO DO PROBLEMA</h2>
-        <p style="font-size: 7pt; margin-top: 2px;">A vida digital facilitou pagamentos, compras e empregos. Os criminosos apenas acompanharam a migração.</p>
+        <h2>A ESCALA DO PERIGO!</h2>
+        <p style="font-size: 6.5pt; font-weight: bold;">Tudo virou digital: bancos, compras, papos e vagas. Os vilões só mudaram de endereço!</p>
       </div>
-      <div class="box">
-        <span class="stat-number">281,2 MIL</span>
-        <p style="font-size: 6.5pt; text-align: center; font-weight: bold;">casos de estelionato eletrônico no Brasil em 2024</p>
+      <div class="comic-box" style="text-align: center; background: #fff;">
+        <span class="onomatopoeia" style="color: #d00;">ALERTA! 🚨</span>
+        <div class="badge-stat">281,2 MIL</div>
+        <p style="font-size: 5.5pt; font-weight: bold; line-height: 1;">Registros de estelionato eletrônico no Brasil em 2024</p>
       </div>
-      <p style="font-size: 5.5pt; color: #555;">Fonte: Fórum Brasileiro de Segurança Pública, 2024.</p>
-      <div class="highlight-quote" style="background: #e0e0e0;">
-        "Como esses golpes parecem tão reais?"
+      <p style="font-size: 4.5pt; font-weight: bold; text-align: right;">[Fonte: Fórum Bras. Seg. Pública 2024]</p>
+      <div class="speech-bubble" style="background: #ffe600;">
+        "Mas como essa galera consegue enganar tanta gente?" 🤔
       </div>
     </div>
 
     <!-- PÁGINA 3: OS PRINCIPAIS GOLPES DIGITAIS -->
-    <div class="page">
+    <div class="page p-3">
       <div>
-        <h2>CARDÁPIO DO FRAUDADOR</h2>
-        <p style="font-size: 6.5pt; margin-bottom: 3px;">As modalidades mais comuns no dia a dia:</p>
+        <h2>MENU DOS GOLPES 🛒</h2>
+        <p style="font-size: 6pt; font-weight: bold;">As armadilhas mais comuns da rede:</p>
       </div>
-      <ul class="list-mini">
-        <li>🛒 <b>Lojas Falsas:</b> E-commerces clones.</li>
-        <li>💼 <b>Falsos Empregos:</b> Renda fácil cobrando taxas.</li>
-        <li>🎣 <b>Phishing:</b> Links falsos via SMS/WhatsApp.</li>
-        <li>📱 <b>Perfis Clones:</b> Anúncios patrocinados falsos.</li>
-        <li>☎️ <b>Falso Atendimento:</b> Golpista se passa por banco.</li>
-      </ul>
-      <div class="box" style="background: #000; color: #fff; font-size: 6.5pt;">
-        Nesta fanzine, focamos em <b>Lojas Falsas</b> e <b>Falsas Ofertas de Emprego</b>.
+      <div class="comic-box" style="font-size: 6pt; background: #fff;">
+        <b>🛍️ Lojas Falsas:</b> Sites idênticos com preço inacreditável.<br>
+        <b>💼 Falso Emprego:</b> Renda fácil cobrando "taxas".<br>
+        <b>🎣 Phishing:</b> Links "isca" via WhatsApp ou SMS.<br>
+        <b>📱 Perfis Clones:</b> Anúncios falsos patrocinados.<br>
+        <b>☎️ Falso Gerente:</b> Golpista simulando o banco.
+      </div>
+      <div class="comic-box" style="background: #000; color: #fff; font-size: 5.5pt; text-align: center;">
+        👉 <b>NESTA FANZINE:</b> Vamos focar em <b>Lojas Falsas</b> e <b>Falsas Ofertas de Emprego</b>!
       </div>
     </div>
 
     <!-- PÁGINA 4: LOJAS FALSAS -->
-    <div class="page">
+    <div class="page p-4">
       <div>
-        <h2>LOJAS FALSAS</h2>
-        <span class="tag" style="background: #ff4444;">Promoção ou Cilada?</span>
+        <h2 style="color: #fff;">LOJAS FALSAS 🛍️</h2>
+        <span class="tag-hq" style="background: #000; color: #fff;">PROMOÇÃO OU CILADA?</span>
       </div>
-      <div class="box" style="font-size: 6.5pt;">
-        <b>Smartphone Top de Linha</b><br>
-        De <del>R$ 4.999</del> por <b>R$ 399</b>!<br>
-        <small>⏱️ Oferta expira em 02:15 min • Pague com PIX</small>
+      <div class="comic-box" style="font-size: 5.5pt; background: #fff;">
+        <b>📱 SMARTPHONE TOP DE LINHA</b><br>
+        De <del>R$ 4.999</del> por <b>R$ 399!</b><br>
+        <span class="onomatopoeia" style="font-size: 8pt; color: #000;">⚡ SÓ HOJE!</span>
       </div>
-      <p style="font-size: 6.5pt; text-align: center;"><b>Fluxo:</b> Anúncio ➔ Site Clone ➔ Pix ➔ Sumiço</p>
-      <div class="box" style="font-size: 6pt; background: #fff;">
-        <b>45,1%</b> das denúncias no SOS Golpe/CloudWalk (Jan-Mai/2025) foram sobre golpes de compra.
+      <div class="speech-bubble" style="font-size: 5.5pt;">
+        <b>FLUXO DO GOLPE:</b><br>
+        Anúncio ➔ Site Clone ➔ Pix ➔ Sumiço! 💨
+      </div>
+      <div class="comic-box" style="background: #ffe600; font-size: 5.5pt;">
+        📊 <b>45,1%</b> das denúncias no SOS Golpe (2025) foram sobre compras falsas!
       </div>
     </div>
 
+    <!-- LINHA INFERIOR: PÁGINAS 5 A 8 -->
+
     <!-- PÁGINA 5: FALSAS OFERTAS DE EMPREGO -->
-    <div class="page">
+    <div class="page p-5">
       <div>
-        <h2>O GOLPE DA ESPERANÇA</h2>
-        <p style="font-size: 7pt; font-weight: bold; color: #d00;">"TRABALHE DE CASA! R$ 500/DIA!"</p>
+        <h2>GOLPE DA ESPERANÇA 💼</h2>
+        <span class="onomatopoeia" style="font-size: 9pt; color: #000;">"R$ 500/DIA DE CASA!"</span>
       </div>
-      <ul class="list-mini">
-        <li>• Cobram "taxas de material" ou cadastro.</li>
-        <li>• Coletam documentos para novos golpes.</li>
-        <li>• Prometem comissões sobre tarefas e somem.</li>
-      </ul>
-      <div class="box" style="font-size: 6.5pt; background: #eef;">
-        Golpistas não exploram a ingenuidade: exploram a necessidade e o desemprego.
+      <div class="comic-box" style="font-size: 5.5pt;">
+        <b>O QUE O GOLPISTA QUER?</b><br>
+        • Cobrar "taxa de cadastro".<br>
+        • Roubar documentos e senhas.<br>
+        • Prometer comissão e sumir.
+      </div>
+      <div class="speech-bubble" style="background: #fff;">
+        "Golpistas não exploram a ingenuidade: exploram a necessidade e o desemprego!" 😔
       </div>
     </div>
 
     <!-- PÁGINA 6: POR QUE FUNCIONA? / ENGENHARIA SOCIAL -->
-    <div class="page">
+    <div class="page p-6">
       <div>
-        <h2>ENGENHARIA SOCIAL</h2>
-        <p style="font-size: 6.5pt;">Manipulação psicológica para obter dados e ações.</p>
+        <h2 style="color: #fff;">ENGENHARIA SOCIAL 🧠</h2>
+        <p style="font-size: 5.5pt; color: #fff; font-weight: bold;">A arte de manipular pessoas sem usar vírus!</p>
       </div>
-      <div style="font-size: 6.5pt; display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
-        <div class="box">🚨 <b>Urgência:</b> "Faça hoje!"</div>
-        <div class="box">⏳ <b>Escassez:</b> "Última vaga!"</div>
-        <div class="box">🏢 <b>Autoridade:</b> "Sou do banco"</div>
-        <div class="box">✨ <b>Esperança:</b> "Aprovado!"</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; font-size: 5pt;">
+        <div class="comic-box">🚨 <b>URGÊNCIA:</b><br>"Resolva já!"</div>
+        <div class="comic-box">⏳ <b>ESCASSEZ:</b><br>"Última vaga!"</div>
+        <div class="comic-box">🏢 <b>AUTORIDADE:</b><br>"Sou do banco"</div>
+        <div class="comic-box">✨ <b>ESPERANÇA:</b><br>"Você ganhou!"</div>
       </div>
-      <div class="highlight-quote">
-        "Nem sempre o hacker invade o sistema; às vezes ele convence você a abrir a porta."
+      <div class="speech-bubble" style="background: #ffe600; font-size: 5.5pt;">
+        "Ele não precisa invadir o sistema se convencer VOCÊ a abrir a porta!" 🚪💥
       </div>
     </div>
 
     <!-- PÁGINA 7: TECNOLOGIA + PREVENÇÃO -->
-    <div class="page">
+    <div class="page p-7">
       <div>
-        <h2>TECNOLOGIA + PREVENÇÃO</h2>
-        <p style="font-size: 6pt;"><b>A ESCALA:</b> Algoritmos + Bots + IA espalham anúncios falsos rapidamente.</p>
+        <h2>ALGORITMOS & ESCUDO 🛡️</h2>
+        <p style="font-size: 5.5pt; font-weight: bold;">Anúncios pagos + BOTS + IA espalham golpes em massa!</p>
       </div>
-      <div class="box">
-        <b style="font-size: 6.5pt; display: block; margin-bottom: 2px;">Guia de Proteção:</b>
-        <ul class="list-mini" style="font-size: 6pt;">
-          <li>🔎 Pesquise a reputação no Reclame Aqui.</li>
-          <li>🌐 Cheque a URL (endereço do site) com atenção.</li>
-          <li>⏰ Não tome decisões sob pressão ou urgência.</li>
-          <li>🔐 Bancos nunca pedem senhas por mensagem.</li>
-        </ul>
+      <div class="comic-box" style="background: #fff; font-size: 5.5pt;">
+        <b style="color: #d00;">GUIA RÁPIDO DE DEFESA:</b><br>
+        🔎 Pesquise a loja no Reclame Aqui.<br>
+        🌐 Confira cada letra da URL (site).<br>
+        ⏰ Nunca decida sob pressão!<br>
+        🔐 Bancos NÃO pedem senhas via Zap.
+      </div>
+      <div class="onomatopoeia" style="font-size: 9pt; text-align: center; color: #000;">
+        PAUSE E CHEQUE! 🛑
       </div>
     </div>
 
     <!-- PÁGINA 8: ENCERRAMENTO E CRÉDITOS -->
-    <div class="page">
+    <div class="page p-8">
       <div>
-        <h2>RESPONSABILIDADE COLETIVA</h2>
-        <p style="font-size: 6.5pt; margin-top: 2px;">O impacto é financeiro, emocional e social. Cuidado não é culpa.</p>
+        <h2 style="color: #fff;">A LUTA É COLETIVA! 👥</h2>
+        <p style="font-size: 5.5pt; color: #fff; font-weight: bold;">O dano vai além do dinheiro: gera ansiedade e vergonha. Cuidado não é culpa!</p>
       </div>
-      <div class="highlight-quote" style="background: #000; color: #fff;">
-        "Na internet, desconfiar não é paranoia. É segurança."
+      <div class="comic-box" style="background: #ffe600; text-align: center;">
+        <h3 style="font-size: 8pt; color: #000;">"NA INTERNET, DESCONFIAR NÃO É PARANOIA. É SEGURANÇA!"</h3>
       </div>
-      <div class="footer-note">
-        <b>Sistemas de Informação</b><br>
-        <b>Projeto:</b> Fanzine Acadêmica • Crimes Cibernéticos<br>
-        <b>Fontes:</b> FBSP (2024), SOS Golpe/CloudWalk (2025), IBGE.
+      <div class="footer-hq" style="color: #fff; border-color: #fff;">
+        <b>Sistemas de Informação</b> • Fanzine Acadêmica<br>
+        <b>Refs:</b> FBSP (2024), SOS Golpe/CloudWalk (2025).
       </div>
     </div>
 
