@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fanzine - Crimes Cibernéticos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;700;900&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #e0e0e0;
+      font-family: 'Space Grotesk', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* FOLHA A4 INTEIRA (210mm x 297mm) */
+    .a4-sheet {
+      width: 210mm;
+      height: 297mm;
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: 105mm 105mm;
+      grid-template-rows: repeat(4, 74.25mm);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ESTILO INDIVIDUAL DE CADA PÁGINA (105mm x 74.25mm) */
+    .page {
+      width: 105mm;
+      height: 74.25mm;
+      padding: 6mm;
+      border: 1px dashed #bbb; /* Representa as linhas de dobra */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: #fafafa;
+      color: #111;
+      font-size: 8pt;
+      line-height: 1.15;
+    }
+
+    /* TIPOGRAFIA & ELEMENTOS ZINE */
+    h1, h2, h3 {
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .tag {
+      background: #000;
+      color: #fff;
+      font-size: 6pt;
+      font-weight: bold;
+      padding: 2px 4px;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .box {
+      border: 1.5pt solid #000;
+      padding: 4px;
+      background: #fff;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+    .stat-number {
+      font-size: 18pt;
+      font-weight: 900;
+      text-align: center;
+      display: block;
+      line-height: 1;
+    }
+
+    .highlight-quote {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 8.5pt;
+      text-align: center;
+      background: #ffe600;
+      padding: 3px;
+      border: 1px solid #000;
+    }
+
+    .list-mini {
+      list-style: none;
+    }
+
+    .list-mini li {
+      margin-bottom: 2px;
+      font-size: 7.5pt;
+    }
+
+    .footer-note {
+      font-size: 5.5pt;
+      color: #444;
+      border-top: 1px solid #ccc;
+      padding-top: 2px;
+    }
+
+    /* ESPECÍFICO CAPA */
+    .page-1 {
+      background: #fff000;
+    }
+    .page-1 h1 {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 26pt;
+      letter-spacing: -1px;
+    }
+
+    /* OPORTUNIDADES PARA ESTILO IMPRESSÃO */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .a4-sheet {
+        box-shadow: none;
+      }
+      .page {
+        border: 0.5pt dashed #ccc; /* Linhas discretas para guiar dobras */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="a4-sheet">
+
+    <!-- PÁGINA 1: CAPA -->
+    <div class="page page-1">
+      <div>
+        <span class="tag">Fanzine Acadêmico • SI</span>
+        <h1 style="margin-top: 3px;">GOLPE!</h1>
+        <h3 style="font-size: 8pt; margin-bottom: 4px;">A INTERNET TAMBÉM ENGANA</h3>
+      </div>
+      <p style="font-size: 7.5pt;">Como funcionam os crimes digitais e por que qualquer pessoa pode ser vítima.</p>
+      <div class="box" style="text-align: center; font-size: 7pt; font-weight: bold;">
+        [ 📱🎭 🎣 🛒 ]<br>
+        NÃO É INGENUIDADE.<br>É ENGENHARIA.
+      </div>
+      <div class="footer-note">Sistemas de Informação • 1º Período</div>
+    </div>
+
+    <!-- PÁGINA 2: O TAMANHO DO PROBLEMA -->
+    <div class="page">
+      <div>
+        <h2>O TAMANHO DO PROBLEMA</h2>
+        <p style="font-size: 7pt; margin-top: 2px;">A vida digital facilitou pagamentos, compras e empregos. Os criminosos apenas acompanharam a migração.</p>
+      </div>
+      <div class="box">
+        <span class="stat-number">281,2 MIL</span>
+        <p style="font-size: 6.5pt; text-align: center; font-weight: bold;">casos de estelionato eletrônico no Brasil em 2024</p>
+      </div>
+      <p style="font-size: 5.5pt; color: #555;">Fonte: Fórum Brasileiro de Segurança Pública, 2024.</p>
+      <div class="highlight-quote" style="background: #e0e0e0;">
+        "Como esses golpes parecem tão reais?"
+      </div>
+    </div>
+
+    <!-- PÁGINA 3: OS PRINCIPAIS GOLPES DIGITAIS -->
+    <div class="page">
+      <div>
+        <h2>CARDÁPIO DO FRAUDADOR</h2>
+        <p style="font-size: 6.5pt; margin-bottom: 3px;">As modalidades mais comuns no dia a dia:</p>
+      </div>
+      <ul class="list-mini">
+        <li>🛒 <b>Lojas Falsas:</b> E-commerces clones.</li>
+        <li>💼 <b>Falsos Empregos:</b> Renda fácil cobrando taxas.</li>
+        <li>🎣 <b>Phishing:</b> Links falsos via SMS/WhatsApp.</li>
+        <li>📱 <b>Perfis Clones:</b> Anúncios patrocinados falsos.</li>
+        <li>☎️ <b>Falso Atendimento:</b> Golpista se passa por banco.</li>
+      </ul>
+      <div class="box" style="background: #000; color: #fff; font-size: 6.5pt;">
+        Nesta fanzine, focamos em <b>Lojas Falsas</b> e <b>Falsas Ofertas de Emprego</b>.
+      </div>
+    </div>
+
+    <!-- PÁGINA 4: LOJAS FALSAS -->
+    <div class="page">
+      <div>
+        <h2>LOJAS FALSAS</h2>
+        <span class="tag" style="background: #ff4444;">Promoção ou Cilada?</span>
+      </div>
+      <div class="box" style="font-size: 6.5pt;">
+        <b>Smartphone Top de Linha</b><br>
+        De <del>R$ 4.999</del> por <b>R$ 399</b>!<br>
+        <small>⏱️ Oferta expira em 02:15 min • Pague com PIX</small>
+      </div>
+      <p style="font-size: 6.5pt; text-align: center;"><b>Fluxo:</b> Anúncio ➔ Site Clone ➔ Pix ➔ Sumiço</p>
+      <div class="box" style="font-size: 6pt; background: #fff;">
+        <b>45,1%</b> das denúncias no SOS Golpe/CloudWalk (Jan-Mai/2025) foram sobre golpes de compra.
+      </div>
+    </div>
+
+    <!-- PÁGINA 5: FALSAS OFERTAS DE EMPREGO -->
+    <div class="page">
+      <div>
+        <h2>O GOLPE DA ESPERANÇA</h2>
+        <p style="font-size: 7pt; font-weight: bold; color: #d00;">"TRABALHE DE CASA! R$ 500/DIA!"</p>
+      </div>
+      <ul class="list-mini">
+        <li>• Cobram "taxas de material" ou cadastro.</li>
+        <li>• Coletam documentos para novos golpes.</li>
+        <li>• Prometem comissões sobre tarefas e somem.</li>
+      </ul>
+      <div class="box" style="font-size: 6.5pt; background: #eef;">
+        Golpistas não exploram a ingenuidade: exploram a necessidade e o desemprego.
+      </div>
+    </div>
+
+    <!-- PÁGINA 6: POR QUE FUNCIONA? / ENGENHARIA SOCIAL -->
+    <div class="page">
+      <div>
+        <h2>ENGENHARIA SOCIAL</h2>
+        <p style="font-size: 6.5pt;">Manipulação psicológica para obter dados e ações.</p>
+      </div>
+      <div style="font-size: 6.5pt; display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+        <div class="box">🚨 <b>Urgência:</b> "Faça hoje!"</div>
+        <div class="box">⏳ <b>Escassez:</b> "Última vaga!"</div>
+        <div class="box">🏢 <b>Autoridade:</b> "Sou do banco"</div>
+        <div class="box">✨ <b>Esperança:</b> "Aprovado!"</div>
+      </div>
+      <div class="highlight-quote">
+        "Nem sempre o hacker invade o sistema; às vezes ele convence você a abrir a porta."
+      </div>
+    </div>
+
+    <!-- PÁGINA 7: TECNOLOGIA + PREVENÇÃO -->
+    <div class="page">
+      <div>
+        <h2>TECNOLOGIA + PREVENÇÃO</h2>
+        <p style="font-size: 6pt;"><b>A ESCALA:</b> Algoritmos + Bots + IA espalham anúncios falsos rapidamente.</p>
+      </div>
+      <div class="box">
+        <b style="font-size: 6.5pt; display: block; margin-bottom: 2px;">Guia de Proteção:</b>
+        <ul class="list-mini" style="font-size: 6pt;">
+          <li>🔎 Pesquise a reputação no Reclame Aqui.</li>
+          <li>🌐 Cheque a URL (endereço do site) com atenção.</li>
+          <li>⏰ Não tome decisões sob pressão ou urgência.</li>
+          <li>🔐 Bancos nunca pedem senhas por mensagem.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PÁGINA 8: ENCERRAMENTO E CRÉDITOS -->
+    <div class="page">
+      <div>
+        <h2>RESPONSABILIDADE COLETIVA</h2>
+        <p style="font-size: 6.5pt; margin-top: 2px;">O impacto é financeiro, emocional e social. Cuidado não é culpa.</p>
+      </div>
+      <div class="highlight-quote" style="background: #000; color: #fff;">
+        "Na internet, desconfiar não é paranoia. É segurança."
+      </div>
+      <div class="footer-note">
+        <b>Sistemas de Informação</b><br>
+        <b>Projeto:</b> Fanzine Acadêmica • Crimes Cibernéticos<br>
+        <b>Fontes:</b> FBSP (2024), SOS Golpe/CloudWalk (2025), IBGE.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
